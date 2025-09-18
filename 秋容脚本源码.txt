@@ -73,7 +73,7 @@ local function createTargetFolder()
     if not success then
         -- 降级方案：若无法创建文件夹，临时用PlayerGui文件夹（仅当前会话有效）
         local tempFolder = Instance.new("Folder")
-        tempFolder.Name = "同意秋容脚本"
+        tempFolder.Name = "同意刘某脚本"
         tempFolder.Parent = PlayerGui
         print("警告：持久化文件夹创建失败，使用临时文件夹（仅当前会话有效）")
     end
@@ -207,7 +207,7 @@ local function Popup_VerifyKuaishou()
     local done = false
     
     createButton(frame, "验证快手号", UDim2.new(0.45, 0, 0, 35), UDim2.new(0.1, 0, 0, 175), function()
-        if inputKuaishou.Text == "CN_QRNBYYDS" then
+        if inputKuaishou.Text == "无" then
             done = true
             gui:Destroy()
         else
@@ -259,7 +259,7 @@ local function Popup_VerifyQQGroup()
     -- 最终提示
     local notifyGui = createScreenGui("Popup_FinalNotice")
     local notifyFrame = createFrame(notifyGui, UDim2.new(0, 340, 0, 120), UDim2.new(0.5, -170, 0.5, -60))
-    createLabel(notifyFrame, "确实没有QQ群🤓", UDim2.new(1, 0, 0, 35), UDim2.new(0, 0, 0, 45))
+    createLabel(notifyFrame, "确实没有QQ群🤓合作人一眼鸡❤️", UDim2.new(1, 0, 0, 35), UDim2.new(0, 0, 0, 45))
     playTempSound("12222253")
     task.wait(3)
     notifyGui:Destroy()
@@ -768,7 +768,7 @@ local function createFloatingButton()
         return
     end
     local floatGui = Instance.new("ScreenGui")
-    floatGui.Name = "秋容脚本悬浮窗"
+    floatGui.Name = "刘某脚本悬浮窗"
     floatGui.IgnoreGuiInset = true
     floatGui.Parent = playerGui
     -- 忍者注入器保护GUI
@@ -2146,7 +2146,7 @@ local function create20Content(container)--编号菜单
     -- 按钮数据（含说明）
     local buttons = {
         {
-            name = "",--名字
+            name = "99夜虚空",--名字
             url = "",--脚本代码
             desc = "功能说明：\n- "--功能说明
         }
@@ -2181,9 +2181,9 @@ local function create21Content(container)--编号菜单
     -- 按钮数据（含说明）
     local buttons = {
         {
-            name = "",--名字
-            url = "",--脚本代码
-            desc = "功能说明：\n- "--功能说明
+            name = "doors",--名字
+            url = "https://raw.githubusercontent.com/atnew2025/Chinese-scripts/refs/heads/main/mshax(prohax).txt",--脚本代码
+            desc = "功能说明：\n- 中文好用"--功能说明
         }
     }
     -- 创建按钮
@@ -2426,8 +2426,8 @@ local function createMenuContentPanel(rightPanel, menuKey, panelTitle)
         ["保护房屋免受怪物侵害"] = {contentFunc = create17Content, panelTitle = "房屋防护脚本"},
         ["WARMIX"] = {contentFunc = create18Content, panelTitle = "WARMIX战斗辅助"},
         ["chain(内容已被删除)"] = {contentFunc = create19Content, panelTitle = "chain(内容已被删除)"},
-        ["菜单20"] = {contentFunc = create20Content, panelTitle = "未命名菜单20"},
-        ["菜单21"] = {contentFunc = create21Content, panelTitle = "未命名菜单21"},
+        ["99夜虚空"] = {contentFunc = create20Content, panelTitle = "99夜虚空"},
+        ["doors"] = {contentFunc = create21Content, panelTitle = "doors"},
         ["菜单22"] = {contentFunc = create22Content, panelTitle = "未命名菜单22"},
         ["菜单23"] = {contentFunc = create23Content, panelTitle = "未命名菜单23"},
         ["菜单24"] = {contentFunc = create24Content, panelTitle = "未命名菜单24"}
@@ -2467,7 +2467,7 @@ local function createMainUI()
         return
     end
     local screenGui = Instance.new("ScreenGui")
-    screenGui.Name = "秋容脚本"
+    screenGui.Name = "刘某脚本"
     screenGui.IgnoreGuiInset = true
     screenGui.Parent = playerGui
     -- 忍者注入器保护GUI
@@ -2534,7 +2534,7 @@ local function createMainUI()
         size = UDim2.new(0, 0, 1, 0),
         position = UDim2.new(0.5, 0, 0, 0),
         anchor = Vector2.new(0.5, 0),
-        text = "秋容脚本",
+        text = "刘某脚本",
         color = CONFIG.UI_COLORS.accent,
         textSize = 26,
         font = Enum.Font.SourceSansBold,
@@ -2686,8 +2686,8 @@ local menuList = {
     {menuText = "房屋防护", menuKey = "保护房屋免受怪物侵害", layoutOrder = 17},
     {menuText = "WARMIX", menuKey = "WARMIX", layoutOrder = 18},
     {menuText = "chain(内容已被删除)", menuKey = "chain(内容已被删除)", layoutOrder = 19},
-    {menuText = "菜单20", menuKey = "菜单20", layoutOrder = 20},
-    {menuText = "菜单21", menuKey = "菜单21", layoutOrder = 21},
+    {menuText = "99夜虚空", menuKey = "99夜虚空", layoutOrder = 20},
+    {menuText = "doors", menuKey = "doors", layoutOrder = 21},
     {menuText = "菜单22", menuKey = "菜单22", layoutOrder = 22},
     {menuText = "菜单23", menuKey = "菜单23", layoutOrder = 23},
     {menuText = "菜单24", menuKey = "菜单24", layoutOrder = 24}
@@ -2713,8 +2713,8 @@ local menuConfig = {
     ["保护房屋免受怪物侵害"] = {contentFunc = create17Content, panelTitle = "服务器房屋防护"},
     ["WARMIX"] = {contentFunc = create18Content, panelTitle = "服务器WARMIX[PVP FPS 武器战斗射击枪]"},
     ["chain(内容已被删除)"] = {contentFunc = create19Content, panelTitle = "服务器chain"},
-    ["菜单20"] = {contentFunc = create20Content, panelTitle = "看你妈呢还没弄未命名菜单20"},
-    ["菜单21"] = {contentFunc = create21Content, panelTitle = "看你妈呢还没弄未命名菜单21"},
+    ["99夜虚空"] = {contentFunc = create20Content, panelTitle = "99夜虚空"},
+    ["doors"] = {contentFunc = create21Content, panelTitle = "doors"},
     ["菜单22"] = {contentFunc = create22Content, panelTitle = "看你妈呢还没弄未命名菜单22"},
     ["菜单23"] = {contentFunc = create23Content, panelTitle = "看你妈呢还没弄未命名菜单23"},
     ["菜单24"] = {contentFunc = create24Content, panelTitle = "看你妈呢还没弄未命名菜单24"}
@@ -2820,7 +2820,7 @@ local function initScript()
         end
         return
     end
-    showNotification("UI2.0加载成功", "尊贵的用户欢迎使用秋容脚本")
+    showNotification("UI2.0加载成功", "尊贵的用户欢迎使用刘某脚本")
     print("初始化完成")
 end
 local success, errorMsg = pcall(initScript)
