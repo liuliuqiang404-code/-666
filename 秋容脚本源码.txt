@@ -2210,7 +2210,7 @@ local function create21Content(container)--编号菜单
     return function() end
 end
 --=====================================================
-local function create21Content(container)--编号菜单
+local function create20Content(container)--编号菜单
     if not container or not container:IsDescendantOf(game) then return function() end end
     
     -- 按钮数据（含说明）
@@ -2224,7 +2224,7 @@ local function create21Content(container)--编号菜单
     -- 创建按钮
     for i, btn in ipairs(buttons) do
         createButton(container, {
-            name = "21" .. i,--仅修改前缀数字为22
+            name = "23" .. i,--仅修改前缀数字为22
             layoutOrder = i,
             size = UDim2.new(1, 0, 0, 45 * UI_STATE.scale),
             text = btn.name,
@@ -2428,7 +2428,7 @@ local function createMenuContentPanel(rightPanel, menuKey, panelTitle)
         ["chain(内容已被删除)"] = {contentFunc = create19Content, panelTitle = "chain(内容已被删除)"},
         ["99夜虚空"] = {contentFunc = create20Content, panelTitle = "99夜虚空"},
         ["doors"] = {contentFunc = create21Content, panelTitle = "doors"},
-        ["菜单22"] = {contentFunc = create22Content, panelTitle = "未命名菜单22"},
+        ["99"] = {contentFunc = create22Content, panelTitle = "99"},
         ["菜单23"] = {contentFunc = create23Content, panelTitle = "未命名菜单23"},
         ["菜单24"] = {contentFunc = create24Content, panelTitle = "未命名菜单24"}
     }
@@ -2688,7 +2688,7 @@ local menuList = {
     {menuText = "chain(内容已被删除)", menuKey = "chain(内容已被删除)", layoutOrder = 19},
     {menuText = "99夜虚空", menuKey = "99夜虚空", layoutOrder = 20},
     {menuText = "doors", menuKey = "doors", layoutOrder = 21},
-    {menuText = "菜单22", menuKey = "菜单22", layoutOrder = 22},
+    {menuText = "99", menuKey = "99", layoutOrder = 22},
     {menuText = "菜单23", menuKey = "菜单23", layoutOrder = 23},
     {menuText = "菜单24", menuKey = "菜单24", layoutOrder = 24}
 }
@@ -2715,7 +2715,7 @@ local menuConfig = {
     ["chain(内容已被删除)"] = {contentFunc = create19Content, panelTitle = "服务器chain"},
     ["99夜虚空"] = {contentFunc = create20Content, panelTitle = "99夜虚空"},
     ["doors"] = {contentFunc = create21Content, panelTitle = "doors"},
-    ["菜单22"] = {contentFunc = create22Content, panelTitle = "看你妈呢还没弄未命名菜单22"},
+    ["99"] = {contentFunc = create22Content, panelTitle = "好用"},
     ["菜单23"] = {contentFunc = create23Content, panelTitle = "看你妈呢还没弄未命名菜单23"},
     ["菜单24"] = {contentFunc = create24Content, panelTitle = "看你妈呢还没弄未命名菜单24"}
 }
