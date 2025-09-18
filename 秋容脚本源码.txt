@@ -2210,21 +2210,21 @@ local function create21Content(container)--编号菜单
     return function() end
 end
 --=====================================================
-local function create22Content(container)--编号菜单
+local function create21Content(container)--编号菜单
     if not container or not container:IsDescendantOf(game) then return function() end end
     
     -- 按钮数据（含说明）
     local buttons = {
         {
-            name = "",--名字
-            url = "",--脚本代码
-            desc = "功能说明：\n- "--功能说明
+            name = "99",--名字
+            url = "https://raw.githubusercontent.com/hdjsjjdgrhj/script-hub/refs/heads/main/99Nights",--脚本代码
+            desc = "功能说明：\n- 中文好用"--功能说明
         }
     }
     -- 创建按钮
     for i, btn in ipairs(buttons) do
         createButton(container, {
-            name = "22" .. i,--仅修改前缀数字为22
+            name = "21" .. i,--仅修改前缀数字为22
             layoutOrder = i,
             size = UDim2.new(1, 0, 0, 45 * UI_STATE.scale),
             text = btn.name,
@@ -2595,7 +2595,7 @@ local function createMainUI()
     createControlButton("X", 0, Color3.fromRGB(210, 60, 60), function()
         cleanupOldUI()
         UI_STATE.isRunning = false
-        showNotification("脚本已关闭", "秋容脚本已退出运行", 3)
+        showNotification("脚本已关闭", "刘某脚本已退出运行", 3)
     end)
     local leftWidth = 180 * UI_STATE.scale
     local leftScroll = Instance.new("ScrollingFrame")
