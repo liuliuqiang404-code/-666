@@ -68,7 +68,7 @@ local Tab = Window:MakeTab({-- T ad相当于一个id
 })
 
 Tab:AddParagraph("作者","刘某")
-Tab:AddParagraph("刘某❤️一眼鸡")--这相当于是一个文本标签，第1个是id
+Tab:AddParagraph("刘某❤️一眼鸡","刘某❤️一眼鸡")--这相当于是一个文本标签，第1个是id
 
 
 Tab:AddButton ({--这个就相当于一个按钮
@@ -237,15 +237,41 @@ local Tab = Window:MakeTab({
 })
 
 Tab:AddButton({
-  Name = "99无敌脚本",
+  Name = "99无敌脚本(中文)",
   Callback = function()--再次新建类
       loadstring(game:HttpGet("https://raw.githubusercontent.com/Xingtaiduan/Script/refs/heads/main/Games/森林中的99夜.lua"))()
   end
 })
 
 Tab:AddButton({
-  Name = "99虚空脚本",
+  Name = "99虚空脚本(汉化)",
   Callback = function()--再次新建类
       loadstring(game:HttpGet("https://raw.githubusercontent.com/ke9460394-dot/ugik/refs/heads/main/99%E5%A4%9C%E8%99%9A%E7%A9%BA.txt"))()
+  end
+})
+
+local Tab = Window:MakeTab({
+	Name = "doors",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+  Name = "doors(汉化)",
+  Callback = function()--再次新建类
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/atnew2025/Chinese-scripts/refs/heads/main/mshax(prohax).txt"))()
+  end
+})
+
+local Tab = Window:MakeTab({
+	Name = "死铁轨",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+  Name = "红叶🍁",
+  Callback = function()--再次新建类
+      loadstring(game:HttpGet("https://getnative.cc/script/loader"))()
   end
 })
