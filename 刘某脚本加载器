@@ -1,4 +1,4 @@
---为我没用过，好像就是界面在前面，后面的控件都跟着上一个界面
+--因为我没用过，好像就是界面在前面，后面的控件都跟着上一个界面
 
 local OrionLib = loadstring(game:HttpGet("https://pastebin.com/raw/VeaMSRZK"))()
 local LBLG = Instance.new("ScreenGui", getParent)
