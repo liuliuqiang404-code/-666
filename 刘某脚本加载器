@@ -289,3 +289,10 @@ Tab:AddButton({
       loadstring(game:HttpGet("https://getnative.cc/script/loader"))()
   end
 })
+
+Tab:AddButton({
+  Name = "v5刷债券",
+  Callback = function()--再次新建类
+      loadstring(game:HttpGet('https://raw.githubusercontent.com/m00ndiety/Moondiety/refs/heads/main/Loader'))()
+  end
+})
