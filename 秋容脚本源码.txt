@@ -211,7 +211,7 @@ local function Popup_VerifyKuaishou()
             done = true
             gui:Destroy()
         else
-            statusLabel.Text = "作者快手号都不知道，配用这个脚本吗😡？快手号是CN_QRNBYYDS"
+            statusLabel.Text = "作者快手号都不知道，配用这个脚本吗😡？快手号是无"
             statusLabel.TextColor3 = Color3.fromRGB(255, 60, 60)
         end
     end)
