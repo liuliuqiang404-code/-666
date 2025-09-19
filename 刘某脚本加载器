@@ -182,6 +182,13 @@ Tab:AddTextbox({
 	end
 })
 
+Tab:AddButton({
+  Name = "飞行",
+  Callback = function()--再次新建类
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/liuliuqiang404-code/-666/refs/heads/main/%E9%A3%9E%E8%A1%8C%E8%84%9A%E6%9C%AC(%E4%B8%AD%E6%96%87%E5%8F%AF%E9%9A%90%E8%97%8F)(3).txt"))()
+  end
+})
+
 local Section = Tab:AddSection({
 	Name = "以下为通用功能"
 })
