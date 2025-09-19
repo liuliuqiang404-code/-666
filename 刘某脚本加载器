@@ -189,6 +189,13 @@ Tab:AddButton({
   end
 })
 
+Tab:AddButton({
+  Name = "飞行好用的",
+  Callback = function()--再次新建类
+      loadstring(game:HttpGet("https://pastebin.com/raw/zxD9Tv63"))()
+  end
+})
+
 local Section = Tab:AddSection({
 	Name = "以下为通用功能"
 })
