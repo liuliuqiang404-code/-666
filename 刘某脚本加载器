@@ -303,3 +303,30 @@ Tab:AddButton({
       loadstring(game:HttpGet('https://raw.githubusercontent.com/m00ndiety/Moondiety/refs/heads/main/Loader'))()
   end
 })
+
+local Tab = Window:MakeTab({
+	Name = "墨水游戏",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+  Name = "汉化",
+  Callback = function()--再次新建类
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/hdjsjjdgrhj/script-hub/refs/heads/main/Ringta"))()
+  end
+})
+
+Tab:AddButton({
+  Name = "汉化2",
+  Callback = function()--再次新建类
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/Xingtaiduan/Script/refs/heads/main/Games/墨水游戏.lua"))()
+  end
+})
+
+Tab:AddButton({
+  Name = "3",
+  Callback = function()--再次新建类
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/hdjsjjdgrhj/script-hub/refs/heads/main/TexRBLlX"))()
+  end
+})
