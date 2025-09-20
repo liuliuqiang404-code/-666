@@ -330,3 +330,16 @@ Tab:AddButton({
       loadstring(game:HttpGet("https://raw.githubusercontent.com/hdjsjjdgrhj/script-hub/refs/heads/main/TexRBLlX"))()
   end
 })
+
+local Tab = Window:MakeTab({
+	Name = "脚本中心",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+  Name = "皮脚本",
+  Callback = function()--再次新建类
+      getgenv().XiaoPi="皮脚本QQ群1002100032" loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaopi77/xiaopi77/main/QQ1002100032-Roblox-Pi-script.lua"))()
+  end
+})
