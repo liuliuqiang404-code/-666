@@ -60,7 +60,7 @@ OrionLib:MakeNotification({
                 })
 Start = tick()
 Heartbeat:Connect(HeartbeatUpdate)
-local Window = OrionLib:MakeWindow({Name = "刘某脚本", HidePremium = false, SaveConfig =true,IntroText="加载脚本", ConfigFolder = "文件存放名"})
+local Window = OrionLib:MakeWindow({Name = "刘某脚本", HidePremium = false, SaveConfig =true,IntroText="刘某脚本加载中", ConfigFolder = "文件存放名"})
 local Tab = Window:MakeTab({-- T ad相当于一个id
 	Name = "主页",
 	Icon = "rbxassetid://4483345998",
@@ -355,5 +355,24 @@ Tab:AddButton({
   Name = "叶脚本",
   Callback = function()--再次新建类
       loadstring(game:HttpGet("https://raw.githubusercontent.com/roblox-ye/QQ515966991/refs/heads/main/ROBLOX-CNVIP-XIAOYE.lua"))()
+  end
+})
+
+local Tab = Window:MakeTab({
+	Name = "惊喜",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+  Name = "惊喜",
+  Callback = function()--再次新建类
+
+      local Window = OrionLib:MakeWindow({Name = "刘某脚本", HidePremium = false, SaveConfig =true,IntroText="自杀开启中", ConfigFolder = "文件存放名"})
+      OrionLib:MakeNotification({
+                    Name = "骗你的",
+                    Content = "AKF关闭",
+                    Time = 1
+                })
   end
 })
