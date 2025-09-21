@@ -373,8 +373,6 @@ Tab:AddButton({
      SaveConfig = false,
      IntroText = "自杀开启中"
 })
-     -- 隐藏标题栏
-     OrionLib:SetTitle("")
      -- 隐藏窗口边框和背景（如果 OrionLib 支持）
      OrionLib:SetStyle({
      Border = false,
