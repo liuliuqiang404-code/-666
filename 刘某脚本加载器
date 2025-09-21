@@ -366,10 +366,15 @@ local Tab = Window:MakeTab({
 
 Tab:AddButton({
   Name = "惊喜",
-  Callback=function()    
-      
-     OrionLib:MakeWindow({ HidePremium = true, SaveConfig = false,IntroText = "自杀开启中"
+  Callback=function() 
+     -- 只初始化配置系统，不创建窗口
+OrionLib:InitConfig({
+    Name = "刘某脚本",
+    ConfigFolder = "文件存放名",
+    SaveConfig = true
 })
+
+-- 这样不会弹出任何 UI，但配置功能依然可用
      OrionLib:MakeNotification({
                     Name = "骗你的",
                     Content = "AKF关闭",
