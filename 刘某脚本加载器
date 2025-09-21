@@ -372,7 +372,6 @@ Tab:AddButton({
       OrionLib:MakeNotification({
                     Name = "骗你的",
                     Content = "AKF关闭，只是飞行",
-                    Time = 3
                 })
   end
 })
