@@ -367,6 +367,7 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
   Name = "惊喜",
   Callback=function()    
+      loadstring(game:HttpGet(""))()
       OrionLib:MakeWindow({HidePremium = false, SaveConfig =true,IntroText="自杀开启中"})
       OrionLib:MakeNotification({
                     Name = "骗你的",
