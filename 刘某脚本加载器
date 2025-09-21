@@ -264,6 +264,13 @@ Tab:AddButton({
   end
 })
 
+Tab:AddButton({
+  Name = "righ",
+  Callback = function()--再次新建类
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/hdjsijdgrhj/script-hub/refs/heads/main/99Nights"))()
+  end
+})
+
 local Tab = Window:MakeTab({
 	Name = "doors",
 	Icon = "rbxassetid://4483345998",
@@ -341,5 +348,12 @@ Tab:AddButton({
   Name = "皮脚本",
   Callback = function()--再次新建类
       getgenv().XiaoPi="皮脚本QQ群1002100032" loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaopi77/xiaopi77/main/QQ1002100032-Roblox-Pi-script.lua"))()
+  end
+})
+
+Tab:AddButton({
+  Name = "叶脚本",
+  Callback = function()--再次新建类
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/roblox-ye/QQ515966991/refs/heads/main/ROBLOX-CNVIP-XIAOYE.lua"))()
   end
 })
