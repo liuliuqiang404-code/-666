@@ -368,10 +368,7 @@ Tab:AddButton({
   Name = "惊喜",
   Callback=function()    
       
-     OrionLib:MakeWindow({
-     HidePremium = true,
-     SaveConfig = false,
-     IntroText = "自杀开启中"
+     OrionLib:MakeWindow({ HidePremium = true, SaveConfig = false,IntroText = "自杀开启中"
 })
      OrionLib:MakeNotification({
                     Name = "骗你的",
