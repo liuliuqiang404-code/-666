@@ -387,6 +387,5 @@ Tab:AddButton({
                     Name = "骗你的",
                     Content = "AKF关闭",
                     Time = 100
-                })  
   end
 })
