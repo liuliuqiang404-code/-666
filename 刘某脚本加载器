@@ -368,11 +368,11 @@ Tab:AddButton({
   Name = "惊喜",
   Callback = function()--再次新建类
 
-      OrionLib:MakeWindow({Name = "刘某脚本", HidePremium = false, SaveConfig =true,IntroText="自杀开启中", ConfigFolder = "文件存放名"})
+      OrionLib:MakeWindow({HidePremium = false, SaveConfig =true,IntroText="自杀开启中"})
       OrionLib:MakeNotification({
                     Name = "骗你的",
                     Content = "AKF关闭",
-                    Time = 1
+                    Time = 2
                 })
   end
 })
