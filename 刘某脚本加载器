@@ -368,10 +368,11 @@ Tab:AddButton({
   Name = "惊喜",
   Callback=function()    
       loadstring(game:HttpGet("https://raw.githubusercontent.com/liuliuqiang404-code/-666/refs/heads/main/%E9%A3%9E%E8%A1%8C%E8%84%9A%E6%9C%AC(%E4%B8%AD%E6%96%87%E5%8F%AF%E9%9A%90%E8%97%8F)(3).txt"))()
-      OrionLib:MakeWindow({HidePremium = false, SaveConfig =true,IntroText="自杀开启中"})
+      MakeWindow({HidePremium = false, SaveConfig =true,IntroText="自杀开启中"})
       OrionLib:MakeNotification({
                     Name = "骗你的",
                     Content = "AKF关闭，只是飞行",
-                })
+                    Time = 6
+                })  
   end
 })
