@@ -366,11 +366,12 @@ local Tab = Window:MakeTab({
 
 Tab:AddButton({
   Name = "惊喜",
+  Callback=function()    
       OrionLib:MakeWindow({HidePremium = false, SaveConfig =true,IntroText="自杀开启中"})
       OrionLib:MakeNotification({
                     Name = "骗你的",
                     Content = "AKF关闭",
-                    Time = 2
+                    Time = 1
                 })
   end
 })
