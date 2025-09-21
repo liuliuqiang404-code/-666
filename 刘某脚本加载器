@@ -372,16 +372,16 @@ Tab:AddButton({
      HidePremium = true,
      SaveConfig = false,
      IntroText = "自杀开启中"
- })
- -- 隐藏标题栏
- OrionLib:SetTitle("")
- -- 隐藏窗口边框和背景（如果 OrionLib 支持）
- OrionLib:SetStyle({
+})
+     -- 隐藏标题栏
+     OrionLib:SetTitle("")
+     -- 隐藏窗口边框和背景（如果 OrionLib 支持）
+     OrionLib:SetStyle({
      Border = false,
      Background = false
- })
- -- 如果还有多余按钮或元素，可以直接隐藏
- for _, btn in pairs(OrionLib.Window.Buttons) do
+})
+     -- 如果还有多余按钮或元素，可以直接隐藏
+     for _, btn in pairs(OrionLib.Window.Buttons) do
      btn.Visible = false
      OrionLib:MakeNotification({
                     Name = "骗你的",
