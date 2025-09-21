@@ -368,8 +368,12 @@ Tab:AddButton({
   Name = "惊喜",
   Callback=function()    
       
-      MakeWindow:({HidePremium = false, SaveConfig =true,IntroText="自杀开启中"})
-      OrionLib:MakeNotification({
+     OrionLib:MakeWindow({
+     HidePremium = true,      -- 隐藏付费入口
+     SaveConfig = false,      -- 不保存配置
+     IntroText = "自杀开启中"  -- 只保留这句文字
+ })
+     OrionLib:MakeNotification({
                     Name = "骗你的",
                     Content = "AKF关闭",
                     Time = 6
