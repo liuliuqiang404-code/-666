@@ -384,3 +384,16 @@ Window.Visible = false
                 })
   end
 })
+
+local Tab = Window:MakeTab({
+	Name = "穿墙可拿物品一起穿",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+  Name = "穿墙",
+  Callback = function()--再次新建类
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/liuliuqiang404-code/-666/refs/heads/main/%E7%A9%BF%E5%A2%99%E7%A7%BB%E5%8A%A8%E7%89%A9%E5%93%81%E6%B1%89%E5%8C%96(2).txt"))()
+  end
+})
