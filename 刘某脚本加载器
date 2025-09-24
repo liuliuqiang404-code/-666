@@ -1,3 +1,43 @@
+-- 卡密列表
+local permanentKeys = {
+    ["刘某nb"] = true,
+    ["permanentkey2"] = true,
+    -- 添加更多永久卡密
+}
+local oneTimeKeys = {
+    ["刘某"] = true,
+    ["onetimekey2"] = true,
+    -- 添加更多一次性卡密
+}
+
+-- 验证函数
+function verifyKey(inputKey)
+    if permanentKeys[inputKey] then
+        return true, "permanent"
+    elseif oneTimeKeys[inputKey] then
+        oneTimeKeys[inputKey] = nil  -- 用过后移除，变成一次性
+        return true, "onetime"
+    else
+        return false, nil
+    end
+end
+
+-- 获取用户输入
+local UserInputService = game:GetService("UserInputService")
+local keyVerified = false
+local keyType = nil
+
+repeat
+    print("请输入卡密：")
+    local inputKey = io.read()  -- 你也可以用 Roblox 的 UI 输入
+    keyVerified, keyType = verifyKey(inputKey)
+    if not keyVerified then
+        print("卡密无效，请重试。")
+    end
+until keyVerified
+
+print("卡密验证成功，类型：" .. keyType)
+
 local CoreGui = game:GetService("StarterGui")CoreGui:SetCore("SendNotification", {    Title = "刘某脚本",    Text = "耐心等待（反挂机已开启）",    Duration = 5, })print("反挂机开启")		local vu = game:GetService("VirtualUser")		game:GetService("Players").LocalPlayer.Idled:connect(function()		   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)		   wait(1)		   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)		end)
 
 local OrionLib = loadstring(game:HttpGet("https://pastebin.com/raw/VeaMSRZK"))()
