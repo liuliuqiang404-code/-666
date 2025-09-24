@@ -1,37 +1,3 @@
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-  <meta charset="UTF-8">
-  <title>卡密验证</title>
-</head>
-<body>
-  <input type="password" id="keyInput" placeholder="请输入卡密">
-  <button onclick="verifyKey()">验证</button>
-  <div id="errorMsg" style="color:red;"></div>
-
-  <script>
-    const FIXED_KEY = "abc123";
-    function verifyKey() {
-      const userInput = document.getElementById("keyInput").value;
-      if (userInput === FIXED_KEY) {
-        loadMainScript();
-      } else {
-        document.getElementById("errorMsg").innerText = "卡密错误，无法加载脚本！";
-        // 可选择直接退出
-        // window.close(); // 或 location.href = "about:blank";
-      }
-    }
-    function loadMainScript() {
-      // 可以动态加载其它脚本文件
-      const script = document.createElement("script");
-      script.src = "main.js";
-      document.body.appendChild(script);
-      document.getElementById("errorMsg").innerText = "验证成功，脚本已加载！";
-    }
-  </script>
-</body>
-</html>
-
 local CoreGui = game:GetService("StarterGui")CoreGui:SetCore("SendNotification", {    Title = "刘某脚本",    Text = "耐心等待（反挂机已开启）",    Duration = 5, })print("反挂机开启")		local vu = game:GetService("VirtualUser")		game:GetService("Players").LocalPlayer.Idled:connect(function()		   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)		   wait(1)		   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)		end)
 
 local OrionLib = loadstring(game:HttpGet("https://pastebin.com/raw/VeaMSRZK"))()
