@@ -1,42 +1,4 @@
-local json = require("json") -- 如用dkjson、cjson等，根据你的环境适配
 
--- 模拟卡密存储（实际使用建议存文件或数据库）
-local keys = {
-    ["ONCE-KEY-1"] = {type = "single", used = false},
-    ["FOREVER-KEY-1"] = {type = "forever", bind = nil},
-}
-
--- 卡密验证函数
-function check_key(key, user_id)
-    local info = keys[key]
-    if not info then
-        return false, "卡密不存在"
-    end
-
-    if info.type == "single" then
-        if info.used then
-            return false, "一次性卡密已被使用"
-        else
-            info.used = true
-            return true, "验证成功，一次性卡密已使用"
-        end
-    elseif info.type == "forever" then
-        if info.bind and info.bind ~= user_id then
-            return false, "永久卡密已绑定其他用户"
-        else
-            info.bind = user_id -- 绑定当前用户
-            return true, "验证成功，永久卡密已绑定"
-        end
-    end
-end
-
--- 示例调用
-local user_id = "user123"
-local result, msg = check_key("ONCE-KEY-1", user_id)
-print(msg)
-
-result, msg = check_key("FOREVER-KEY-1", user_id)
-print(msg)
 
 local CoreGui = game:GetService("StarterGui")CoreGui:SetCore("SendNotification", {    Title = "刘某脚本",    Text = "耐心等待（反挂机已开启）",    Duration = 5, })print("反挂机开启")		local vu = game:GetService("VirtualUser")		game:GetService("Players").LocalPlayer.Idled:connect(function()		   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)		   wait(1)		   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)		end)
 local OrionLib = loadstring(game:HttpGet("https://pastebin.com/raw/VeaMSRZK"))()
