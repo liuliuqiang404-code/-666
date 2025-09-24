@@ -80,8 +80,7 @@ Button.MouseButton1Click:Connect(function()
     local success, msg = verifyKey(key)
     Result.Text = msg
     if success then
-        -- 卡密验证通过后执行你的主脚本逻辑
-        -- 例如：loadstring(game:HttpGet("https://raw.githubusercontent.com/liuliuqiang404-code/-666/refs/heads/main/刘某脚本加载器"))()
-        -- 或者调用你的主功能函数
+    Callback = function()--再次新建类
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/liuliuqiang404-code/-666/refs/heads/main/刘某脚本加载器"))()
     end
 end)
