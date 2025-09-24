@@ -1,11 +1,11 @@
 -- 卡密系统（支持一次性卡密和永久卡密），附带简单UI
 local once_keys = { -- 一次性卡密
-    ["ONCE-ABC123"] = true,
-    ["ONCE-DEF456"] = true,
+    ["刘某脚本一次性1"] = true,
+    ["刘某脚本一次性2"] = true,
 }
 local perm_keys = { -- 永久卡密
-    ["PERM-XYZ999"] = true,
-    ["PERM-QWE888"] = true,
+    ["刘某永久1"] = true,
+    ["刘某永久2"] = true,
 }
 local used_once_keys = {}
 
