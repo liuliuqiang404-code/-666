@@ -1,6 +1,6 @@
 -- 卡密列表，实际应用建议服务器校验
 local one_time_keys = {"ONCE-123", "ONCE-456"} -- 一次性卡密
-local permanent_keys = {"PERM-888", "PERM-999"} -- 永久卡密
+local permanent_keys = {"PERM-888", "刘"} -- 永久卡密
 local used_keys = {} -- 存储已用一次性卡密
 
 -- 创建UI界面
@@ -71,7 +71,7 @@ Button.MouseButton1Click:Connect(function()
     end
 end)
 
-local CoreGui = game:GetService("StarterGui")CoreGui:SetCore("SendNotification", {    Title = "刘某脚本",    Text = "耐心等待（反挂机已开启）",    Duration = 5, })print("反挂机开启")		local vu = game:GetService("VirtualUser")		game:GetService("Players").LocalPlayer.Idled:connect(function()		   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)		   wait(1)		   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)		end)
+local CoreGui = game:GetService("StarterGui")CoreGui:SetCore("SendNotification", {    Title = "刘某脚本",    Text = "请输卡密",    Duration = 5, })print("反挂机开启")		local vu = game:GetService("VirtualUser")		game:GetService("Players").LocalPlayer.Idled:connect(function()		   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)		   wait(1)		   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)		end)
 local OrionLib = loadstring(game:HttpGet("https://pastebin.com/raw/VeaMSRZK"))()
 local LBLG = Instance.new("ScreenGui", getParent)
 local LBL = Instance.new("TextLabel", getParent)
