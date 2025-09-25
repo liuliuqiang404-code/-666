@@ -1,4 +1,72 @@
+import PySimpleGUI as sg
+import requests
+import os
 
+# 卡密列表（本地测试用）
+kami_list = {
+    "abc123": "once",
+    "forever999": "forever"
+}
+
+def verify_kami_local(code):
+    typ = kami_list.get(code)
+    if typ == "once":
+        del kami_list[code]
+        return True, "一次性"
+    elif typ == "forever":
+        return True, "永久"
+    else:
+        return False, "卡密错误"
+
+def verify_kami_web(code):
+    # 示例API，自行替换为你的服务器
+    url = f"https://你的服务器.com/kami/check?code={code}"
+    try:
+        resp = requests.get(url, timeout=5)
+        data = resp.json()
+        if data.get("status") == "ok":
+            return True, data.get("type")
+        else:
+            return False, data.get("msg")
+    except Exception as e:
+        return False, f"网络错误: {e}"
+
+def execute_lua_script(script_path):
+    # 这里实际注入需要调用 Roblox 注入器，如 Synapse X、Krnl 等
+    # 例如写入到注入器的自动执行目录
+    # 这里只是简单打开显示
+    os.system(f'start notepad "{script_path}"')
+
+layout = [
+    [sg.Text("请输入卡密：")],
+    [sg.Input(key='-KAMI-')],
+    [sg.Button("验证并执行", key="-VERIFY-")],
+    [sg.Text("", key='-MSG-', size=(40,2))]
+]
+
+window = sg.Window("罗布乐思忍者注入器", layout)
+
+lua_script_path = "刘某脚本加载器.lua"  # 请将你的脚本文件名改为此名，同目录下
+
+while True:
+    event, values = window.read()
+    if event == sg.WINDOW_CLOSED:
+        break
+    if event == "-VERIFY-":
+        code = values['-KAMI-']
+        if not code:
+            window['-MSG-'].update("请输入卡密")
+            continue
+        # 本地验证
+        ok, info = verify_kami_local(code)
+        # 如需联网验证，改为 verify_kami_web(code)
+        if ok:
+            window['-MSG-'].update(f"验证成功！（{info}卡密）正在执行脚本...")
+            execute_lua_script(lua_script_path)
+        else:
+            window['-MSG-'].update(f"卡密错误: {info}")
+
+window.close()
 
 local CoreGui = game:GetService("StarterGui")CoreGui:SetCore("SendNotification", {    Title = "刘某脚本",    Text = "耐心等待（反挂机已开启）",    Duration = 5, })print("反挂机开启")		local vu = game:GetService("VirtualUser")		game:GetService("Players").LocalPlayer.Idled:connect(function()		   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)		   wait(1)		   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)		end)
 local OrionLib = loadstring(game:HttpGet("https://pastebin.com/raw/VeaMSRZK"))()
