@@ -1,4 +1,69 @@
+import sys
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QMessageBox, QVBoxLayout
 
+# 卡密配置
+ONETIME_KEYS = {"ONETIME-123", "ONETIME-456"}       # 一次性卡密集合
+PERMANENT_KEYS = {"刘", "PERMANENT-def"} # 永久卡密集合
+USED_ONETIME_KEYS = set() # 用于记录已用过的一次性卡密（内存保存，重启失效）
+
+def verify_card(key):
+    if key in PERMANENT_KEYS:
+        return "permanent"
+    if key in ONETIME_KEYS and key not in USED_ONETIME_KEYS:
+        USED_ONETIME_KEYS.add(key)
+        return "onetime"
+    return None
+
+class CardKeyUI(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("罗布乐思忍者注入器 - 卡密验证")
+        self.setGeometry(600, 300, 320, 140)
+        layout = QVBoxLayout()
+        self.label = QLabel("请输入卡密：")
+        layout.addWidget(self.label)
+        self.key_input = QLineEdit()
+        layout.addWidget(self.key_input)
+        self.button = QPushButton("验证并执行主脚本")
+        self.button.clicked.connect(self.check_key)
+        layout.addWidget(self.button)
+        self.setLayout(layout)
+        self.result = None
+
+    def check_key(self):
+        key = self.key_input.text().strip()
+        result = verify_card(key)
+        if result == "permanent":
+            QMessageBox.information(self, "验证成功", "永久卡密验证成功，开始执行！")
+            self.result = True
+            self.close()
+        elif result == "onetime":
+            QMessageBox.information(self, "验证成功", "一次性卡密验证成功，开始执行！")
+            self.result = True
+            self.close()
+        else:
+            QMessageBox.critical(self, "验证失败", "卡密错误或已使用，请重新输入！")
+            self.result = False
+
+# ======= 验证入口 =======
+def cardkey_entry():
+    app = QApplication(sys.argv)
+    ui = CardKeyUI()
+    ui.show()
+    app.exec_()
+    if ui.result:
+        return True
+    sys.exit(0) # 验证失败，退出程序
+
+# 只需在主脚本最上方加入如下语句
+if not cardkey_entry():
+    sys.exit(0)
+# ======= 卡密验证通过后，下面是你的主脚本逻辑 =======
+
+# 你的罗布乐思忍者注入器主脚本内容 ↓↓↓
+# 例如：
+print("主脚本正在运行...")
+# 这里写你的注入逻辑、UI、功能等
 
 local OrionLib = loadstring(game:HttpGet("https://pastebin.com/raw/VeaMSRZK"))()
 local LBLG = Instance.new("ScreenGui", getParent)
