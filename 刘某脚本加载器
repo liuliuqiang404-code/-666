@@ -1,47 +1,4 @@
-import tkinter as tk
-from tkinter import messagebox
 
-# 示例卡密存储（实际可用远程API或数据库）
-ONETIME_KEYS = {"abc123", "def456"}
-PERMANENT_KEYS = {"vip999", "pro888"}
-
-used_onetime_keys = set()
-
-def check_key(key):
-    # 一次性卡密：用过就失效
-    if key in ONETIME_KEYS and key not in used_onetime_keys:
-        used_onetime_keys.add(key)
-        return True
-    # 永久卡密：一直有效
-    if key in PERMANENT_KEYS:
-        return True
-    return False
-
-def run_main_script():
-    # 这里写你的主脚本逻辑
-    messagebox.showinfo("验证成功", "卡密验证通过，正在执行主脚本！")
-    # 示例主脚本内容
-    print("执行注入器主逻辑...")
-
-def on_submit():
-    key = entry.get().strip()
-    if check_key(key):
-        run_main_script()
-        root.destroy()
-    else:
-        messagebox.showerror("验证失败", "卡密无效或已使用！")
-
-root = tk.Tk()
-root.title("罗布乐思忍者注入器 - 卡密验证")
-root.geometry("350x150")
-
-tk.Label(root, text="请输入卡密：").pack(pady=10)
-entry = tk.Entry(root, width=30, show="*")
-entry.pack(pady=5)
-
-tk.Button(root, text="验证并运行", command=on_submit).pack(pady=10)
-
-root.mainloop()
 
 local OrionLib = loadstring(game:HttpGet("https://pastebin.com/raw/VeaMSRZK"))()
 local LBLG = Instance.new("ScreenGui", getParent)
